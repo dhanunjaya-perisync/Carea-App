@@ -8,6 +8,9 @@ export const swiperThree = require("../../assets/images/swiper-car-3.png")
 export const fbLogo = require("../../assets/images/fb-logo.png")
 export const googleLogo = require("../../assets/images/google-logo.png")
 export const appleLogo = require("../../assets/images/apple-logo.png")
+export const paypalLogo = require("../../assets/images/paypal.png")
+export const mastercardLogo = require("../../assets/images/master-card.png")
+
 
 export const profileImgOne = require("../../assets/images/profile-img-01.jpg")
 export const profileImgTwo = require("../../assets/images/profile-img-02.jpg")

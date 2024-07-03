@@ -26,6 +26,13 @@ import { MakeAnOffer } from '../screens/makeOffer/MakeAnOffer';
 import { OfferProcess } from '../screens/makeOffer/OfferProcess';
 import { OfferAccept } from '../screens/makeOffer/OfferAccept';
 import { OfferReject } from '../screens/makeOffer/OfferReject';
+import { BmwStore } from '../screens/bmwStore/BmwStore';
+import { Checkout } from '../screens/checkout/Checkout';
+import { ChooseShipping } from '../screens/chooseShipping/ChooseShipping';
+import { ShippingAddress } from '../screens/shippingAddress/ShippingAddress';
+import { PaymentMethod } from '../screens/paymentMethod/PaymentMethod';
+import { ReviewSummary } from '../screens/reviewSummary/ReviewSummary';
+import { EnterYourPin } from '../screens/enterYourPin/EnterYourPin';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigation = ()=> {
@@ -36,7 +43,7 @@ export const StackNavigation = ()=> {
             screenOptions={{
                 headerShadowVisible:false
             }}
-            initialRouteName='SplashScreen'
+            initialRouteName='SearchScreen'
         >
             { !isLoggedIn ? 
                 <Stack.Group>
@@ -59,12 +66,18 @@ export const StackNavigation = ()=> {
                 <Stack.Screen name='TopDeals' component={TopDeals} options={{title:"Top Deals"}}/>
                 <Stack.Screen name='SearchScreen' component={SearchScreen} options={{headerShown:false}}/>
                 <Stack.Screen name='CarInfo' component={CarInfo} options={{title:""}}/>
+                <Stack.Screen name='BmwStore' component={BmwStore} options={{title:"BMW Store"}}/>
                 <Stack.Screen name='Reviews' component={Reviews} />
                 <Stack.Screen name='MakeAnOffer' component={MakeAnOffer} options={{title:"Make an Offer"}}/>
                 <Stack.Screen name='OfferProcess' component={OfferProcess} options={{title:"Make an Offer"}}/>
                 <Stack.Screen name='OfferReject' component={OfferReject} options={{title:"Your Offer"}}/>
                 <Stack.Screen name='OfferAccept' component={OfferAccept} options={{title:"Your Offer"}}/>
-                
+                <Stack.Screen name='Checkout' component={Checkout} options={{title:"Checkout"}}/>
+                <Stack.Screen name='ChooseShipping' component={ChooseShipping} options={{title:"Choose Shipping"}}/>
+                <Stack.Screen name='ShippingAddress' component={ShippingAddress} options={{title:"Shipping Address"}}/>
+                <Stack.Screen name='PaymentMethod' component={PaymentMethod} options={{title:"Payment Methods"}}/>
+                <Stack.Screen name='ReviewSummary' component={ReviewSummary} options={{title:"Review Summary"}}/>
+                <Stack.Screen name='EnterYourPin' component={EnterYourPin} options={{title:"Enter Your Pin"}}/>
         </Stack.Group>
             }
             {/* {at == "" ?

@@ -6,7 +6,10 @@ import {  heightValue, padding, styles } from '../../styles/Styles'
 import { ButtonComponent } from '../../components/touchables/CommonButton'
 import { Colors } from '../../styles/Colors'
 
-export const OfferAccept = () => {
+export const OfferAccept = ({navigation}) => {
+  const navigateToCheckout = () => {
+    navigation.navigate("Checkout")
+  }
   return (
     <ScreenViewComponent style={[padding(0,0,20),styles.centerVertical]}>
         <Image source={acceptImage} resizeMode='contain'
@@ -20,7 +23,7 @@ export const OfferAccept = () => {
           textCenter={true}
         />
         <View style={[styles.positionAbsolute,{bottom:40,width:"100%",left:20}]}>
-          <ButtonComponent titleName={"Proceed to Checkout"} bgColor={Colors.black} size={16} customShadow={2}/>
+          <ButtonComponent titleName={"Proceed to Checkout"} bgColor={Colors.black} size={16} customShadow={2} onPressEvent={navigateToCheckout}/>
         </View>
     </ScreenViewComponent>
   )

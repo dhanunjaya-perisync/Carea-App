@@ -25,6 +25,10 @@ export const CarInfo = ({navigation}) => {
     const navigateToMakeAnOffer = () => {
       navigation.navigate("MakeAnOffer")
     }
+    const navigateToBmwStore = () => {
+      navigation.navigate("BmwStore")
+    }
+    
 
   return (
     <ScreenViewComponent style={[padding(0,0,20)]}>
@@ -92,7 +96,8 @@ export const CarInfo = ({navigation}) => {
             </View>
           </View>
           <View style={[styles.row,gap(20)]}>
-              <TouchableOpacity>
+            {/* TODO */}
+              <TouchableOpacity onPress={navigateToBmwStore}>
                 <Icon2 name='message1' size={23}/>
               </TouchableOpacity>
               <TouchableOpacity>

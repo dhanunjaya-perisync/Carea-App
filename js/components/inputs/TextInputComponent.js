@@ -1,18 +1,24 @@
 
 import { View, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { borderWidth, flex, fontSize, gap, marginPosition, padding, paddingPoistion, radius, styles, } from '../../styles/Styles'
 import Icon from "react-native-vector-icons/Entypo"
 import { TextComponent } from '../view'
 import { Colors } from '../../styles/Colors'
 
-export const TextInputCompnent = ({iconBlack,value,onChangeText,errorMessage,placeholderValue, iconName, iconSize, hide, size, inputHeight, inputWidth, iconColor, leftMargin, style, type, lengthMax, shadow, inputLeft,edit}) => {
+export const TextInputCompnent = ({multiline,iconBlack,value,onChangeText,errorMessage,placeholderValue, iconName, iconSize, hide, size, inputHeight, inputWidth, iconColor, leftMargin, style, type, lengthMax, shadow, inputLeft,edit}) => {
   const [isFocus, setIsFocus] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 
   const buttonPressed = () => {
     setShowPassword(!showPassword)
   }
+  useEffect(() => {
+    if(hide=="image"){
+      setShowPassword(true)
+    }
+  }, [])
+  
 
   const handleFocus = () => {
     setIsFocus(true)
@@ -38,6 +44,7 @@ export const TextInputCompnent = ({iconBlack,value,onChangeText,errorMessage,pla
         editable={!edit ? edit:true}
         value={value}
         onChangeText={onChangeText}
+        multiline={multiline}
       />
       { hide == "eye" || hide == "eye-with-line" &&
         <TouchableOpacity hitSlop={{top:20,left:20,bottom:20,right:20}} onPress={buttonPressed} style={[{ position: "absolute", right: 15 }]}>

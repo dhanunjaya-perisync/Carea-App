@@ -177,7 +177,7 @@ export const DashboardScreen = ({ navigation }) => {
 
 
                 {/* Top Deals */}
-                <View style={[styles.row, styles.spaceBetween, marginPosition(0, 20, 15, 0)]}>
+                <View style={[styles.row, styles.spaceBetween, marginPosition(15, 20, 15, 0)]}>
                     <TextComponent title={"Top Deals"} size={22} style={[styles.poppinsSemiBold]} />
                     <TouchableOpacity onPress={navigateToTopDeals}>
                         <TextComponent title={"See All"} size={18} style={[styles.poppinsSemiBold]} />

@@ -50,6 +50,7 @@ export const SearchScreen = ({navigation}) => {
 
     return (
         <ScreenViewComponent style={[paddingPoistion(20,20,0,20)]}>
+            <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
             <SearchComponent placeholder={"Search"} autoFocus={true} onChangeText={handleSearch} value={item} filterEvent={showModal}/>
             { item.length > 0 ? 
                 <View style={[styles.row,styles.spaceBetween,marginPosition(20,0,15,0)]}>

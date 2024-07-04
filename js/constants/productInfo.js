@@ -9,7 +9,7 @@ export const CarProductInfo = [
         rating:4.9,
         status:"New",
         price:"190,000",
-        liked:true,
+        liked:false,
         imageUrl:carImage1,
         color:{name:"red",code:"red"}
     },
@@ -20,7 +20,7 @@ export const CarProductInfo = [
         rating:4.6,
         status:"Used",
         price:"133,000",
-        liked:true,
+        liked:false,
         imageUrl:carImage2,
         color:{name:"red",code:"red"}
     },
@@ -31,7 +31,7 @@ export const CarProductInfo = [
         rating:4.7,
         status:"Used",
         price:"170,000",
-        liked:true,
+        liked:false,
         imageUrl:carImage3,
         color:{name:"red",code:"red"}
     },
@@ -42,7 +42,7 @@ export const CarProductInfo = [
         rating:4.9,
         status:"New",
         price:"167,000",
-        liked:true,
+        liked:false,
         imageUrl:carImage4,
         color:{name:"red",code:"red"}
     },
@@ -53,7 +53,7 @@ export const CarProductInfo = [
         rating:4.3,
         status:"New",
         price:"25,000",
-        liked:true,
+        liked:false,
         imageUrl:carImage5,
         color:{name:"red",code:"red"}
     },
@@ -64,7 +64,7 @@ export const CarProductInfo = [
         rating:4.5,
         status:"Used",
         price:"155,000",
-        liked:true,
+        liked:false,
         imageUrl:carImage6,
         color:{name:"red",code:"red"}
     },

@@ -1,4 +1,4 @@
-import { StatusBar, View, TextInput, Text, Button } from 'react-native'
+import { StatusBar, View, TextInput} from 'react-native'
 import React, { useState, useRef } from 'react'
 import { ScreenViewComponent, TextComponent } from '../../components'
 import { borderWidth, fontSize, gap, marginPosition, paddingPoistion, styles, heightValue, margin, padding, widthValue, flex, opacity, radius } from '../../styles/Styles'

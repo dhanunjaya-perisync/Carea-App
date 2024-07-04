@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList,StatusBar } from 'react-native'
 import React, { useState } from 'react'
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import { ScreenViewComponent, TextComponent, TextInputCompnent } from '../../components'
@@ -36,6 +36,7 @@ export const BmwStore = () => {
 
   return (
     <ScreenViewComponent style={[padding(0, 0, 20)]}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <View style={[styles.allCenter, marginPosition(10, 0, 20, 0)]}>
         <View style={[styles.bgLightGrey, padding(0, 6, 8), radius(5), { width: 60 }]}>
           <TextComponent title={`Today`} fontWeight={"400"} size={14} textCenter={true} />

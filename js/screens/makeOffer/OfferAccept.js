@@ -1,4 +1,4 @@
-import { View, Image } from 'react-native'
+import { View, Image ,StatusBar} from 'react-native'
 import React from 'react'
 import { acceptImage } from '../../constants/imageLinks'
 import { ScreenViewComponent,TextComponent } from '../../components'
@@ -12,6 +12,7 @@ export const OfferAccept = ({navigation}) => {
   }
   return (
     <ScreenViewComponent style={[padding(0,0,20),styles.centerVertical]}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
         <Image source={acceptImage} resizeMode='contain'
           style={[{width:"100%",height:heightValue(3.2)}]}
         />

@@ -1,4 +1,4 @@
-import { View, Text, TextInput ,TouchableOpacity, FlatList} from 'react-native'
+import { View, StatusBar, TextInput ,TouchableOpacity, FlatList} from 'react-native'
 import React, { useState } from 'react'
 import { ScreenViewComponent, TextComponent } from '../../components'
 import { borderWidth, fontSize, margin, padding, radius, styles, marginPosition } from '../../styles/Styles'
@@ -37,6 +37,7 @@ export const MakeAnOffer = ({navigation}) => {
   }
   return (
     <ScreenViewComponent style={[padding(0, 0, 20)]}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <TextComponent title={"Enter your offer amount"} size={15} style={[styles.textCenter,margin(0,15,0),styles.poppinsMedium]}/>
       <TextInput
         style={[borderWidth(2), styles.borderBlack, styles.textCenter, { height: 110 }, radius(20), fontSize(45), styles.poppinsSemiBold]}

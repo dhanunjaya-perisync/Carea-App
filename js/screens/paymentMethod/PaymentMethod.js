@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image ,StatusBar} from 'react-native'
 import React, { useState } from 'react'
 import { ScreenViewComponent, TextComponent } from '../../components'
 import { borderWidth, gap, margin, marginPosition, padding, paddingPoistion, position, radius, shadow, styles, widthValue } from '../../styles/Styles'
@@ -36,6 +36,7 @@ export const PaymentMethod = ({navigation}) => {
 
     return (
         <ScreenViewComponent style={[padding(0, 0, 20)]}>
+            <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
             <TextComponent title={"Select the payment method you want to use"} size={15} style={[styles.poppinsMedium, marginPosition(10, 0, 0, 0)]} />
             <RadioComponent selected={selected === "option1"} iconName={"wallet"} onSelect={() => { setSelect("option1") }} name={"My Wallet"} price={"$297.89"} showIcon={true} />
             <RadioComponent selected={selected === "option2"} iconName={"train-subway"} onSelect={() => { setSelect("option2") }} name={"Google Pay"} price={"$297.89"} cover={true} logo={googleLogo}/>

@@ -1,4 +1,4 @@
-import { FlatList, View, TouchableOpacity } from 'react-native'
+import { FlatList, View, TouchableOpacity ,StatusBar} from 'react-native'
 import React, { useState } from 'react'
 import { ScreenViewComponent } from '../../components'
 import { wishlistInfo } from '../../constants/carCardsInfo'
@@ -15,7 +15,7 @@ export const Wishlist = ({ navigation }) => {
   const likeToggle = (id) => {
     let modifiedData = Data.map(item => {
       if (item.id == id) {
-        return { ...item, liked: !item.liked }
+        return { ...item, liked: false}
       }
       return item
     })
@@ -24,6 +24,7 @@ export const Wishlist = ({ navigation }) => {
 
   return (
     <ScreenViewComponent style={[paddingPoistion(30, 20, 0, 20)]}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <View>
       <FlatList
         columnWrapperStyle={[styles.spaceBetweenVertical]}

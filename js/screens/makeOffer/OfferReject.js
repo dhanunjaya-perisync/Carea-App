@@ -1,4 +1,4 @@
-import { View, Image } from 'react-native'
+import { View, Image,StatusBar } from 'react-native'
 import React from 'react'
 import { rejectImage } from '../../constants/imageLinks'
 import { ScreenViewComponent, TextComponent } from '../../components'
@@ -15,6 +15,7 @@ export const OfferReject = ({ navigation }) => {
   }
   return (
     <ScreenViewComponent style={[paddingPoistion(40, 20, 0, 20)]}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <Image source={rejectImage} resizeMode='contain'
         style={[{ width: "100%", height: heightValue(3.2) },marginPosition(30,0,0,0)]}
       />

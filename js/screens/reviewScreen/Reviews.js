@@ -1,4 +1,4 @@
-import { View, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, ScrollView, TouchableOpacity, Image ,StatusBar} from 'react-native'
 import React, { useState } from 'react'
 import { marginPosition, paddingPoistion, borderWidth, radius, styles, padding, gap, margin } from '../../styles/Styles'
 import { TextComponent, ScreenViewComponent } from '../../components'
@@ -21,6 +21,7 @@ export const Reviews = () => {
   const ReviewComponent = ({imageUri,name,rating,comment,likes,heart}) => {
     return (
       <View style={[margin(0, 15, 0)]}>
+        <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
         <View style={[styles.row, styles.spaceBetween]}>
           <View style={[styles.row, styles.allCenter, gap(15)]}>
             <Image style={[{ height: 50, width: 50 },radius(25)]} source={imageUri} />

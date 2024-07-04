@@ -44,7 +44,7 @@ export const StackNavigation = ()=> {
             screenOptions={{
                 headerShadowVisible:false
             }}
-            initialRouteName='TabNavigation'
+            initialRouteName='SplashScreen'
         >
             { !isLoggedIn ? 
                 <Stack.Group>

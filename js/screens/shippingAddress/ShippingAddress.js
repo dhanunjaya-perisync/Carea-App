@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity ,StatusBar} from 'react-native'
 import React, { useState } from 'react'
 import { ScreenViewComponent, TextComponent } from '../../components'
 import { borderWidth, gap, margin, marginPosition, padding, paddingPoistion, position, radius, shadow, styles, widthValue } from '../../styles/Styles'
@@ -45,6 +45,7 @@ export const ShippingAddress = ({navigation}) => {
     }
     return (
         <ScreenViewComponent style={[padding(0, 0, 20)]}>
+            <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
             <RadioComponent selected={selected === "option1"} onSelect={() => { setSelect("option1") }} show={true} name={"Home"} address={"61480 Subbrook Park, PC 5679"}/>
             <RadioComponent selected={selected === "option2"} onSelect={() => { setSelect("option2") }} name={"Office"} address={"6993 Meadow valley Terra, PC 3637"}/>
             <RadioComponent selected={selected === "option3"} onSelect={() => { setSelect("option3") }} name={"Apartment"} address={"21833 Clyde Gallagher, PC 4662"}/>

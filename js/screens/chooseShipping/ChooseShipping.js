@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity,StatusBar } from 'react-native'
 import React, { useState } from 'react'
 import { ScreenViewComponent, TextComponent } from '../../components'
 import { borderWidth, gap, margin, marginPosition, padding, paddingPoistion, position, radius, shadow, styles, widthValue } from '../../styles/Styles'
@@ -35,6 +35,7 @@ export const ChooseShipping = ({navigation}) => {
     }
     return (
         <ScreenViewComponent style={[padding(0, 0, 20)]}>
+            <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
             <RadioComponent selected={selected === "option1"} iconName={"truck"} onSelect={() => { setSelect("option1") }} name={"Truck"} date={"Est. Arrival, Dec 20-23"} price={"$200"}/>
             <RadioComponent selected={selected === "option2"} iconName={"train-subway"} onSelect={() => { setSelect("option2") }}  name={"Train"} date={"Est. Arrival, Dec 20-22"} price={"$250"}/>
             <RadioComponent selected={selected === "option3"} iconName={"ship"} onSelect={() => { setSelect("option3") }}  name={"Container Ship"} date={"Est. Arrival, Dec 19-20"} price={"$300"}/>

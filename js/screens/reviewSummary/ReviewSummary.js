@@ -14,6 +14,7 @@ export const ReviewSummary = ({navigation}) => {
   }
   return (
     <ScreenViewComponent style={[padding(0, 0, 20)]}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <View style={[styles.row, padding(20), gap(15), radius(20), shadow(1), styles.bgWhite, margin(0, 15, 0)]}>
         <View style={[styles.bgLightGrey, { width: 110, height: 90 }, styles.allCenter, radius(15)]}>
           <Image source={carImageOne} style={[{ height: 90, width: 110 }]} resizeMode='contain' />

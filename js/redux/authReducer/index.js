@@ -9,5 +9,4 @@ export const authReducer = combineReducers({
     webSocket: webSocketConnectionReducer,
     userInfo: userInfoReducer,
     isLoggedIn: isLoggedInReducer,
-
 })

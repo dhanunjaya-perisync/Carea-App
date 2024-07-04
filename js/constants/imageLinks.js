@@ -24,7 +24,6 @@ export const notFoundImage = require("../../assets/images/Not-found.png")
 export const checkBadge = require("../../assets/images/check-badge.png")
 
 
-// car card info 
 export const carImageOne = require("../../assets/images/car-01.png")
 export const carImageTwo = require("../../assets/images/car-02.png")
 export const carImageThree = require("../../assets/images/car-03.png")
@@ -32,13 +31,18 @@ export const carImageFour = require("../../assets/images/car-04.png")
 export const carImageFive = require("../../assets/images/car-05.png")
 export const carImageSix = require("../../assets/images/car-06.png")
 
-//wish list
 export const carImage1 = require("../../assets/images/car-1.png")
 export const carImage2 = require("../../assets/images/car-2.png")
 export const carImage3 = require("../../assets/images/car-3.png")
 export const carImage4 = require("../../assets/images/car-4.png")
 export const carImage5 = require("../../assets/images/car-5.png")
 export const carImage6 = require("../../assets/images/car-6.png")
+
+export const carHonda1 = require("../../assets/images/honda-1.png")
+export const carHonda2 = require("../../assets/images/honda-2.png")
+export const carBugatti1 = require("../../assets/images/bugatti-1.png")
+export const carBugatti2 = require("../../assets/images/bugatti-2.png")
+export const carBugatti3 = require("../../assets/images/bugatti-3.png")
 
 // offer status
 export const rejectImage = require("../../assets/images/reject.png")

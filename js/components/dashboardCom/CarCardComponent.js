@@ -1,19 +1,20 @@
 import { View, Image, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { TextComponent } from '../../components'
-import { gap, marginPosition, padding, radius, styles } from '../../styles/Styles'
+import { gap, marginPosition, padding, radius, styles, widthValue } from '../../styles/Styles'
 import Icon from "react-native-vector-icons/FontAwesome"
 
-export const CarCardComponent = ({item}) => {
+export const CarCardComponent = ({item,onPressLike}) => {
+  const [like,setLike] = useState(false)
   return (
-    <View style={[{position:"relative",width:178},marginPosition(0,0,20,0)]}>
+    <View style={[{position:"relative",width:widthValue(2.32)},marginPosition(0,0,20,0)]}>
         <View style={[,styles.bgLightGrey,radius(20),styles.allCenter]}>
           <Image
           source={item.imageUrl}
           style={[{height:130,width:140,}]}
           resizeMode='contain'
           />
-          <TouchableOpacity style={[styles.positionAbsolute,{right:15,top:15}]}>
+          <TouchableOpacity style={[styles.positionAbsolute,{right:15,top:15}]} onPress={onPressLike}>
               <Icon name={item.liked?"heart":"heart-o"} size={17}/>
           </TouchableOpacity>
         </View>

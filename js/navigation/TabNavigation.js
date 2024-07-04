@@ -7,6 +7,7 @@ import { Inbox } from '../screens/inbox/Inbox'
 import { Wallet } from '../screens/wallet/Wallet'
 import { Profile } from '../screens/profile/Profile'
 import Icon from "react-native-vector-icons/AntDesign"
+import { Colors } from '../styles/Colors'
 const Tab = createBottomTabNavigator()
 export const TabNavigation = () => {
   return (

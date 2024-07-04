@@ -1,20 +1,28 @@
 import { View, Image } from 'react-native'
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { processImage } from '../../constants/imageLinks'
 import { ScreenViewComponent,TextComponent } from '../../components'
 import {  heightValue, padding, styles } from '../../styles/Styles'
 import { ButtonComponent } from '../../components/touchables/CommonButton'
 import { Colors } from '../../styles/Colors'
 export const OfferProcess = ({navigation}) => {
-  //navigation
-  useEffect(() => {
-    setTimeout(() => {
+  const [home,setHome] = useState(false)
+  // navigation
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       navigateToOfferReject()
+  //   }, 3000);
+  //   }, [])
+
+  const navigateToOfferReject = () => {
+    if(!home){
       navigation.navigate("OfferReject")
-  }, 3000);
-  }, [])
+    }
+  }
   
   const navigateToHome = () => {
     navigation.replace("TabNavigation")
+    setHome(true)
   }
   return (
     <ScreenViewComponent style={[padding(0,0,20),styles.centerVertical]}>

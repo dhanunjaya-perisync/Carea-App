@@ -33,6 +33,7 @@ import { ShippingAddress } from '../screens/shippingAddress/ShippingAddress';
 import { PaymentMethod } from '../screens/paymentMethod/PaymentMethod';
 import { ReviewSummary } from '../screens/reviewSummary/ReviewSummary';
 import { EnterYourPin } from '../screens/enterYourPin/EnterYourPin';
+import { CarBrandFilter } from '../screens/carBrandFilter/CarBrandFilter';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigation = ()=> {
@@ -43,7 +44,7 @@ export const StackNavigation = ()=> {
             screenOptions={{
                 headerShadowVisible:false
             }}
-            initialRouteName='SearchScreen'
+            initialRouteName='TabNavigation'
         >
             { !isLoggedIn ? 
                 <Stack.Group>
@@ -78,6 +79,7 @@ export const StackNavigation = ()=> {
                 <Stack.Screen name='PaymentMethod' component={PaymentMethod} options={{title:"Payment Methods"}}/>
                 <Stack.Screen name='ReviewSummary' component={ReviewSummary} options={{title:"Review Summary"}}/>
                 <Stack.Screen name='EnterYourPin' component={EnterYourPin} options={{title:"Enter Your Pin"}}/>
+                <Stack.Screen name='CarBrandFilter' component={CarBrandFilter} options={{title:"My Brand"}}/>
         </Stack.Group>
             }
             {/* {at == "" ?

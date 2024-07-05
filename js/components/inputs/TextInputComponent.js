@@ -1,12 +1,12 @@
 
 import { View, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState,useEffect } from 'react'
-import { borderWidth, flex, fontSize, gap, marginPosition, padding, paddingPoistion, radius, styles, } from '../../styles/Styles'
+import { borderWidth, flex, fontSize, gap, marginPosition, paddingPoistion, radius, styles, } from '../../styles/Styles'
 import Icon from "react-native-vector-icons/Entypo"
 import { TextComponent } from '../view'
 import { Colors } from '../../styles/Colors'
 
-export const TextInputCompnent = ({multiline,iconBlack,value,onChangeText,errorMessage,placeholderValue, iconName, iconSize, hide, size, inputHeight, inputWidth, iconColor, leftMargin, style, type, lengthMax, shadow, inputLeft,edit}) => {
+export const TextInputCompnent = ({pickImage,multiline,iconBlack,value,onChangeText,errorMessage,placeholderValue, iconName, iconSize, hide, size, inputHeight, inputWidth, iconColor, leftMargin, style, type, lengthMax, shadow, inputLeft,edit}) => {
   const [isFocus, setIsFocus] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 
@@ -52,9 +52,15 @@ export const TextInputCompnent = ({multiline,iconBlack,value,onChangeText,errorM
         </TouchableOpacity>
       }
       {
-        hide != null && hide != "eye" && hide!="eye-with-line" && (
+        hide != null && hide!="image" && hide != "eye" && hide!="eye-with-line" && (
           <Icon name={hide}  size={iconSize} color={iconBlack ? "#000" : "#888888"} style={[{ position: "absolute", right: 15 }]}/>
         )
+      }
+      {
+        hide == "image" && 
+        <TouchableOpacity style={[{ position: "absolute", right: 15 }]} onPress={pickImage}>
+          <Icon name={hide}  size={iconSize} color={iconBlack ? "#000" : "#888888"}/>
+        </TouchableOpacity>
       }
 
     </View>

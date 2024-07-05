@@ -5,10 +5,22 @@ import { borderWidth, gap, margin, marginPosition, padding, paddingPoistion, pos
 import Icon from "react-native-vector-icons/FontAwesome6"
 import { ButtonComponent } from '../../components/touchables/CommonButton'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
-
+import { useRoute } from '@react-navigation/native'
 
 export const ShippingAddress = ({navigation}) => {
     const [selected, setSelect] = useState("option1")
+    const [currentAddress, setCurrentAddress] = useState({})
+    const route = useRoute()
+    const address = (home,add) => {
+        setCurrentAddress({name:home,address:add})
+        console.log(currentAddress)
+    }
+    //navigate
+    const navigateToBack = () => {
+        route.params.onGoBack(currentAddress)
+        navigation.goBack()
+    }
+    
 
     const RadioComponent = ({ selected, onSelect, show,name,address}) => {
         return (
@@ -36,27 +48,25 @@ export const ShippingAddress = ({navigation}) => {
                         <View style={[{ height: 14, width: 14 }, radius(8), selected ? styles.bgBlack : styles.bgWhite]}></View>
                     </View>
                 </TouchableOpacity>
+                {/* storing address */}
             </View>
         )
     }
-    //navigate
-    const navigateToShippingAddress = () => {
-        navigation.navigate("ChooseShipping")
-    }
+
     return (
         <ScreenViewComponent style={[padding(0, 0, 20)]}>
             <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
-            <RadioComponent selected={selected === "option1"} onSelect={() => { setSelect("option1") }} show={true} name={"Home"} address={"61480 Subbrook Park, PC 5679"}/>
-            <RadioComponent selected={selected === "option2"} onSelect={() => { setSelect("option2") }} name={"Office"} address={"6993 Meadow valley Terra, PC 3637"}/>
-            <RadioComponent selected={selected === "option3"} onSelect={() => { setSelect("option3") }} name={"Apartment"} address={"21833 Clyde Gallagher, PC 4662"}/>
-            <RadioComponent selected={selected === "option4"} onSelect={() => { setSelect("option4") }} name={"Parent's House"} address={"5259 Blue Bill Park, PC 4627"}/>
+            <RadioComponent selected={selected === "option1"} onSelect={() => { setSelect("option1"); address("Home","61480 Subbrook Park, PC 5679")}} show={true} name={"Home"} address={"61480 Subbrook Park, PC 5679"}/>
+            <RadioComponent selected={selected === "option2"} onSelect={() => { setSelect("option2");address("Office","6993 Meadow valley Terra, PC 3637") }} name={"Office"} address={"6993 Meadow valley Terra, PC 3637"}/>
+            <RadioComponent selected={selected === "option3"} onSelect={() => { setSelect("option3");address("Apartment","21833 Clyde Gallagher, PC 4662") }} name={"Apartment"} address={"21833 Clyde Gallagher, PC 4662"}/>
+            <RadioComponent selected={selected === "option4"} onSelect={() => { setSelect("option4");address("Parent's House","5259 Blue Bill Park, PC 4627") }} name={"Parent's House"} address={"5259 Blue Bill Park, PC 4627"}/>
 
             <View style={[marginPosition(10,0,0,0)]}>
                 <ButtonComponent titleName={"Add New Address"} color={"#000"} style={[styles.bgLightGrey]} customShadow={2}/>
             </View>
             {/* button */}
             <View style={[styles.positionAbsolute,{bottom:0,width:widthValue(1),zIndex:4},paddingPoistion(18,20,20,20),radius(20,20,0,0),shadow(2),styles.bgWhite,borderWidth(1,1,1,0),{borderColor:"rgba(0,0,0,0.1)"}]}>
-                <ButtonComponent titleName={"Apply"} bgColor={Colors.black} size={15} onPressEvent={navigateToShippingAddress}/>
+                <ButtonComponent titleName={"Apply"} bgColor={Colors.black} size={15} onPressEvent={navigateToBack}/>
             </View>
 
         </ScreenViewComponent>

@@ -5,10 +5,24 @@ import { borderWidth, gap, margin, marginPosition, padding, paddingPoistion, pos
 import Icon from "react-native-vector-icons/FontAwesome6"
 import { ButtonComponent } from '../../components/touchables/CommonButton'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
-
+import { useRoute } from '@react-navigation/native'
 
 export const ChooseShipping = ({navigation}) => {
     const [selected, setSelect] = useState("")
+    const [currentShipping, setCurrentShipping] = useState({})
+    const route = useRoute()
+    const address = (name,date,price,icon) => {
+        setCurrentShipping({name:name,date:date,price:price,icon:icon})
+        console.log(currentShipping)
+    }
+
+    
+
+    //navigation 
+    const navigateToBack = () => {
+        route.params.onGoBack(currentShipping)
+        navigation.goBack()
+    }
 
     const RadioComponent = ({ selected, onSelect,iconName,name,date,price }) => {
         return (
@@ -33,16 +47,17 @@ export const ChooseShipping = ({navigation}) => {
             </View>
         )
     }
+    
     return (
         <ScreenViewComponent style={[padding(0, 0, 20)]}>
             <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
-            <RadioComponent selected={selected === "option1"} iconName={"truck"} onSelect={() => { setSelect("option1") }} name={"Truck"} date={"Est. Arrival, Dec 20-23"} price={"$200"}/>
-            <RadioComponent selected={selected === "option2"} iconName={"train-subway"} onSelect={() => { setSelect("option2") }}  name={"Train"} date={"Est. Arrival, Dec 20-22"} price={"$250"}/>
-            <RadioComponent selected={selected === "option3"} iconName={"ship"} onSelect={() => { setSelect("option3") }}  name={"Container Ship"} date={"Est. Arrival, Dec 19-20"} price={"$300"}/>
-            <RadioComponent selected={selected === "option4"} iconName={"plane"} onSelect={() => { setSelect("option4") }}  name={"Plane"} date={"Est. Arrival, Dec 18-19"} price={"$400"}/>
+            <RadioComponent selected={selected === "option1"} iconName={"truck"} onSelect={() => { setSelect("option1");address("Truck","Est. Arrival, Dec 20-23","$200","truck") }} name={"Truck"} date={"Est. Arrival, Dec 20-23"} price={"$200"}/>
+            <RadioComponent selected={selected === "option2"} iconName={"train-subway"} onSelect={() => { setSelect("option2");address("Train","Est. Arrival, Dec 20-22","$250","train-subway") }}  name={"Train"} date={"Est. Arrival, Dec 20-22"} price={"$250"}/>
+            <RadioComponent selected={selected === "option3"} iconName={"ship"} onSelect={() => { setSelect("option3") ;address("Container Ship","Est. Arrival, Dec 19-20","$300","ship")}}  name={"Container Ship"} date={"Est. Arrival, Dec 19-20"} price={"$300"}/>
+            <RadioComponent selected={selected === "option4"} iconName={"plane"} onSelect={() => { setSelect("option4");address("Plane","Est. Arrival, Dec 18-19","$400","plane") }}  name={"Plane"} date={"Est. Arrival, Dec 18-19"} price={"$400"}/>
             {/* button */}
             <View style={[styles.positionAbsolute, { bottom: 0, width: widthValue(1), zIndex: 4 }, paddingPoistion(18, 20, 20, 20), radius(20, 20, 0, 0), shadow(2), styles.bgWhite, borderWidth(1, 1, 1, 0), { borderColor: "rgba(0,0,0,0.1)" }]}>
-                <ButtonComponent titleName={"Apply"} bgColor={Colors.black} size={15} customShadow={2}/>
+                <ButtonComponent titleName={"Apply"} bgColor={Colors.black} size={15} customShadow={2} onPressEvent={navigateToBack}/>
             </View>
 
         </ScreenViewComponent>

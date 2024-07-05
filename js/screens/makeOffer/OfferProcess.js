@@ -8,21 +8,18 @@ import { Colors } from '../../styles/Colors'
 export const OfferProcess = ({navigation}) => {
   const [home,setHome] = useState(false)
   // navigation
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       navigateToOfferReject()
-  //   }, 3000);
-  //   }, [])
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     navigation.navigate("OfferReject")
+    // }, 3000);
+    // }, [])
 
   const navigateToOfferReject = () => {
-    if(!home){
       navigation.navigate("OfferReject")
-    }
   }
   
   const navigateToHome = () => {
-    navigation.replace("TabNavigation")
-    setHome(true)
+    navigation.popToTop()
   }
   return (
     <ScreenViewComponent style={[padding(0,0,20),styles.centerVertical]}>

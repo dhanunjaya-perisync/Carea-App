@@ -1,0 +1,48 @@
+export const notifications = [
+    {
+        id:1,
+        iconName:"location-dot",
+        iconWhite:false,
+        iconBgBlack:false,
+        title:"Your offer has been accepted!",
+        description:"Congrats! your offer has been accepted \n by the seller for $170.00",
+        showButton:true,
+    },
+    {
+        id:2,
+        iconName:"location-dot",
+        iconWhite:false,
+        iconBgBlack:false,
+        title:"Your offer has been accepted!",
+        description:"Congrats! your offer has been accepted \n by the seller for $170.00",
+        showButton:false,
+    },
+    {
+        id:3,
+        iconName:"percent",
+        iconWhite:false,
+        iconBgBlack:false,
+        title:"Your offer has been accepted!",
+        description:"Congrats! your offer has been accepted \n by the seller for $170.00",
+        showButton:true,
+    },
+    {
+        id:4,
+        iconName:"credit-card",
+        iconWhite:true,
+        iconBgBlack:true,
+        title:"Your offer has been accepted!",
+        description:"Congrats! your offer has been accepted \n by the seller for $170.00",
+        showButton:false,
+    },
+    {
+        id:5,
+        iconName:"user-large",
+        iconWhite:true,
+        iconBgBlack:true,
+        title:"Your offer has been accepted!",
+        description:"Congrats! your offer has been accepted \n by the seller for $170.00",
+        showButton:false,
+    },
+
+]
